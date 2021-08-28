@@ -5,54 +5,282 @@ engine: ejs
 current: index
 ---
 
-<div class="container">
-  <h1 class="index__h1">這是一段話</h1>
-  <div class="alert alert-primary" role="alert">
-    A simple primary alert—check it out!
-  </div>
-  <div class="alert alert-secondary" role="alert">
-    A simple secondary alert—check it out!
-  </div>
-  <div class="alert alert-success" role="alert">
-    A simple success alert—check it out!
-  </div>
-  <div class="alert alert-danger" role="alert">
-    A simple danger alert—check it out!
-  </div>
-  <div class="alert alert-warning" role="alert">
-    A simple warning alert—check it out!
-  </div>
-  <div class="alert alert-info" role="alert">
-    A simple info alert—check it out!
-  </div>
-  <div class="alert alert-light" role="alert">
-    A simple light alert—check it out!
-  </div>
-  <div class="alert alert-dark" role="alert">
-    A simple dark alert—check it out!
-  </div>
-</div>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+<div class="container p-4">
+  <section class="d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <h2 class="page-title align-self-center pr-47">Admin</h2>
+      <a class="d-flex align-items-center" href="#addAdmin" data-bs-toggle="modal"  data-bs-target="#addAdmin">
+        <span class="material-icons md-24 text-success pe-2">add</span>
+        <h3 class="fz-16 fw-bold">Add New Admin</h3>
+      </a>
+      <!-- add Admin Modal -->
+      <div class="modal fade" id="addAdmin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title page-title" id="addAdmin">New Admin</h3>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex flex-column">
+              <div class="modal-border-bottom pb24">
+                <h4 class="fz-20">Account</h4>
+                <div>
+                  <h5 class="input-title fz-14">Name</h5>
+                  <input class="indent-1" name="account-name" placeholder="Please enter your name">
+                </div>
+                <div>
+                  <h5 class="input-title fz-14 pt16">Email</h5>
+                  <input class="indent-1" name="account-email" placeholder="Please enter your email">
+                </div>
+              </div>
+              <div class="modal-border-bottom pt24 pb24">
+                <h4 class="fz-20">Verification</h4>
+                <div class="d-flex pb16">
+                  <span class="material-icons md-24 text-danger pe-2">warning</span>
+                  <div class="lh-33">
+                    Unverified
+                  </div>
+                </div>
+                <button type="button" class="send-mail btn btn-outline-success w-100">Send Verification Mail</button>
+              </div>
+              <div class="modal-border-bottom">
+                <h4 class="fz-20 pt24">Access Level</h4>
+                <div class="pb24">
+                  <select class="form-select p-3 color-gray-600 fz-16" aria-label="Default select example">
+                    <option selected>-Choose access level-</option>
+                    <option value="Amdin">Admin</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Part-time">Part-time</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <h4 class="fz-20 pt24">Custom Access</h4>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Lecture
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Coupon
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Message
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Setting
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Task Menu
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-success me-2" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-success">Add</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="d-flex align-items-center">
+      <span class="material-icons md-24 me-4">search</span>
+      <span class="material-icons md-24">notifications_active</span>
+    </div>
+  </section>
+  <!-- 表格 -->
+  <div class="row">
+  <table class="table table-hover mw-100">
+    <thead>
+      <tr>
+        <th scope="col-1">ID
+          <a class="align-middle" href="#">
+            <span class="material-icons fz-12 text-success">arrow_downward</span>
+          </a>
+        </th>
+        <th scope="col-3">Name</th>
+        <th scope="col-3">Email</th>
+        <th scope="col-3">Verified</th>
+        <th scope="col-2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" class="fw-normal">#1</th>
+        <td>Emir Wicks</td>
+        <td>emir.wicks@mail.com</td>
+        <td>Yes</td>
+        <td>
+          <div class="d-flex justify-content-end">
+            <a class="pe-4" href="#">
+              <span class="material-icons md-24">visibility</span>
+            </a>
+            <a href="#">
+              <span class="material-icons md-24">edit_active</span>
+            </a>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row" class="fw-normal">#2</th>
+        <td>Zaina Goldsmith</td>
+        <td>zaina.goldsmith@mail.com</td>
+        <td>Yes</td>
+        <td>
+          <a class="pe-4" href="#">
+            <span class="material-icons md-24">visibility</span>
+          </a>
+          <a href="#">
+            <span class="material-icons md-24">edit_active</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row" class="fw-normal">#3</th>
+        <td>Mahima Lopez</td>
+        <td>mahima.lopez@mail.com</td>
+        <td>Yes</td>
+        <td>
+          <a class="pe-4" href="#">
+            <span class="material-icons md-24">visibility</span>
+          </a>
+          <a href="#">
+            <span class="material-icons md-24">edit_active</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row" class="fw-normal">#4</th>
+        <td>Pharrell Murray</td>
+        <td>pharrell.murray@mail.com</td>
+        <td>Yes</td>
+        <td>
+          <a class="pe-4" href="#">
+            <span class="material-icons md-24">visibility</span>
+          </a>
+          <a href="#">
+            <span class="material-icons md-24">edit_active</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row" class="fw-normal">#5</th>
+        <td>Annika Mcbride</td>
+        <td>annika.mcbride@mail.com</td>
+        <td>Yes</td>
+        <td>
+          <a class="pe-4" href="#">
+            <span class="material-icons md-24">visibility</span>
+          </a>
+          <a href="#">
+            <span class="material-icons md-24">edit_active</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row" class="fw-normal">#6</th>
+        <td>Fatimah Clark</td>
+        <td>fatimah.clark@mail.com</td>
+        <td>Yes</td>
+        <td>
+          <a class="pe-4" href="#">
+            <span class="material-icons md-24">visibility</span>
+          </a>
+          <a href="#">
+            <span class="material-icons md-24">edit_active</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row" class="fw-normal">#7</th>
+        <td>Klaudia Rhodes</td>
+        <td>klaudia.rhodes@mail.com</td>
+        <td>Yes</td>
+        <td>
+          <a class="pe-4" href="#">
+            <span class="material-icons md-24">visibility</span>
+          </a>
+          <a href="#">
+            <span class="material-icons md-24">edit_active</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row" class="fw-normal">#8</th>
+        <td>Tillie Lucero</td>
+        <td>tillie.lucero@mail.com</td>
+        <td>Yes</td>
+        <td>
+          <a class="pe-4" href="#">
+            <span class="material-icons md-24">visibility</span>
+          </a>
+          <a href="#">
+            <span class="material-icons md-24">edit_active</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row" class="fw-normal">#9</th>
+        <td>Sabrina Stephenson</td>
+        <td>sabrina.stephenson@mail.com</td>
+        <td>Yes</td>
+        <td>
+          <a class="pe-4" href="#">
+            <span class="material-icons md-24">visibility</span>
+          </a>
+          <a href="#">
+            <span class="material-icons md-24">edit_active</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row" class="fw-normal">#10</th>
+        <td>Annie Smith</td>
+        <td>annie.smith@mail.com</td>
+        <td>Yes</td>
+        <td>
+          <a class="pe-4" href="#">
+            <span class="material-icons md-24">visibility</span>
+          </a>
+          <a href="#">
+            <span class="material-icons md-24">edit_active</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
   </div>
+  <!-- 分頁 -->
+  <nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+          <span class="material-icons md-24">chevron_left</span>
+        </a>
+      </li>
+      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+      <li class="page-item" aria-current="page">
+        <a class="page-link" href="#">2</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">
+          <span class="material-icons md-24">chevron_right</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </div>

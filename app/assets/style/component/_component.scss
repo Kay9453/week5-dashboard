@@ -1,0 +1,29 @@
+.modal-header{
+    padding: 2rem 2rem !important;
+    border-bottom-width:0;
+}
+.modal-body{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.modal-body h4{
+    margin-bottom: 1rem;
+}
+// .modal-body select{
+//     height: 3rem;
+// }
+.modal-body .form-check{
+    margin-bottom: 1rem;
+}
+.modal-footer{
+    border-top: 0;
+    padding-top: 2rem !important;
+    padding-right: 2rem !important;
+    padding-left: 2rem !important;
+    padding-bottom: 1rem !important;
+}
+.modal-footer .btn{
+    padding: 0.5rem 2rem;
+}
