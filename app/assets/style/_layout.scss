@@ -8,3 +8,14 @@ h1 a {
     overflow: hidden;
     display: block;
 }
+
+.nav-link-hover:hover{
+    color: #198754;
+    border-left:4px solid#198754;
+    height: 2rem;
+
+    position: absolute;
+    left: 0;
+    padding-left: 28px;
+    align-items: center;
+}

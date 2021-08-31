@@ -11,9 +11,6 @@
 .modal-body h4{
     margin-bottom: 1rem;
 }
-// .modal-body select{
-//     height: 3rem;
-// }
 .modal-body .form-check{
     margin-bottom: 1rem;
 }
@@ -26,4 +23,21 @@
 }
 .modal-footer .btn{
     padding: 0.5rem 2rem;
+}
+#editAdmin .account input{
+    background-color: #F8F9FA;
+}
+.modal-dialog button{
+    font-weight: bold;
+}
+.page-item:active{
+    color: white;
+}
+.page-item .page-link{
+    color: #198754;
+}
+
+.page-item.active .page-link, .page-item .page-link:hover{
+    background-color: #198754;
+    color: white
 }
