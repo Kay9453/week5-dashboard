@@ -16,57 +16,56 @@
     <!-- 導覽列 -->
     <div class="nav d-flex flex-column justify-content-between bg-light">
       <h1 class="logo p-4"><a href="#">ANSWER LOGO</a></h1>
-      <div class="menu d-flex flex-column justify-content-between">
+      <div class="flex-fill menu d-flex flex-column justify-content-between">
         <ul class="d-flex flex-column">
-          <li class="d-flex fz-16 fw-bold">
-            <a href="#">
-              <span class="material-icons md-24 ps-4 text-gray-900">assessment</span>
-              Dashboard
+          <li class="fz-16 fw-bold pt-4 pb-4">
+            <a class="nav-link-hover d-flex" href="#">
+              <span class="material-icons md-24 text-gray-900 me-3">assessment</span>
+              <div class="align-middle">Dashboard</div>
             </a>
           </li>
-          <li class="d-flex fz-16 fw-bold">
-            <a href="#">
-              <span class="material-icons md-24 ps-4">question_answer</span>
-              Question
+          <li class="fz-16 fw-bold pt-4 pb-4">
+            <a class="nav-link-hover d-flex" href="#">
+              <span class="material-icons md-24 me-3">question_answer</span>
+              <div class="align-middle">Question</div>
             </a>
           </li>
-          <li class="d-flex fz-16 fw-bold">
-            <a href="#">
-              <span class="material-icons md-24 ps-4">assignment</span>
-              Assignment
+          <li class="fz-16 fw-bold pt-4 pb-4">
+            <a class="nav-link-hover d-flex" href="#">
+              <span class="material-icons md-24 me-3">assignment</span>
+              <div class="align-middle">Assignment</div>
             </a>
           </li>
-          <li class="d-flex fz-16 fw-bold">
-            <a href="#">
-              <span class="material-icons md-24 ps-4">video_library</span>
-              Course
+          <li class="fz-16 fw-bold pt-4 pb-4">
+            <a class="nav-link-hover d-flex" href="#">
+              <span class="material-icons md-24 me-3">video_library</span>
+              <div class="align-middle">Course</div>
             </a>
           </li>
-          <li class="active d-flex fz-16 fw-bold" aria-current="true">
-            <a href="#">
-              <span class="material-icons md-24 ps-4">supervisor_account</span>
-              Admin
+          <li class="active fz-16 fw-bold pt-4 pb-4" aria-current="true">
+            <a class="nav-link-hover d-flex" href="#">
+              <span class="material-icons md-24 me-3">supervisor_account</span>
+              <div>Admin</div>
             </a>
           </li>
-          <li class="d-flex fz-16 fw-bold">
-            <a href="#">
-              <span class="material-icons md-24 ps-4">settings</span>
-              Settings
+          <li class="fz-16 fw-bold pt-4 pb-4">
+            <a class="nav-link-hover d-flex" href="#">
+              <span class="material-icons md-24 me-3">settings</span>
+              <div class="align-middle">Settings</div>
             </a>
           </li>
         </ul>
         <div class="author d-flex align-items-start p-4">
-          <img class="avatar round-circle " src="../assets/images/andychen.jpeg" alt="Andy Chen">
+          <img class="avatar round-circle" src="../assets/images/andychen.jpeg" alt="Andy Chen">
           <div class="d-flex flex-column ps-3">
-            <h2 class="auther_name fz-16 fw-bold">Andy Chen
-              <span class="auther_email fz-14 text-secondary">andy0401@mail.com</span>
-            </h2>
+            <div class="auther_name fz-16 fw-bold">Andy Chen</div>
+            <span class="auther_email fz-14 text-secondary">andy0401@mail.com</span>
           </div>
         </div>
       </div>
     </div>
     
-<div class="container p-4">
+<div class="container p-4 d-flex flex-column">
   <section class="d-flex justify-content-between align-items-center">
     <div class="d-flex align-items-center">
       <h2 class="page-title align-self-center pr-47">Admin</h2>
@@ -156,6 +155,135 @@
           </div>
         </div>
       </div>
+      <!-- edit Admin Modal -->
+      <div class="modal fade" id="editAdmin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title page-title" id="editAdmin">Edit Admin</h3>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex flex-column">
+              <div class="account modal-border-bottom pb24">
+                <h4 class="fz-20">Account</h4>
+                <div>
+                  <h5 class="input-title fz-14">Name</h5>
+                  <input class="border-0 p-3" name="account-name" placeholder="Please enter your name" value="Emir Wicks" readonly>
+                </div>
+                <div>
+                  <h5 class="input-title fz-14 pt16">Email</h5>
+                  <input class="border-0 p-3" name="account-email" placeholder="Please enter your email" value="emir.wicks@mail.com">
+                </div>
+              </div>
+              <div class="modal-border-bottom pt24 pb24">
+                <h4 class="fz-20">Verification</h4>
+                <div class="d-flex justify-content-between">
+                  <div class="d-flex pb16">
+                    <span class="material-icons md-24 text-dark pe-2">check_circle</span>
+                    <div class="lh-33">
+                    Verified
+                    </div>
+                  </div>
+                  <div class="verified-date">2020/4/12</div>
+                </div>
+                <button type="button" class="send-mail btn btn-outline-light w-100" disabled>Send Verification Mail</button>
+              </div>
+              <div class="modal-border-bottom">
+                <h4 class="fz-20 pt24">Access Level</h4>
+                <div class="pb24">
+                  <select class="form-select p-3 color-gray-600 fz-16" aria-label="Default select example">
+                    <option>-Choose access level-</option>
+                    <option selected value="Amdin">Admin</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Part-time">Part-time</option>
+                  </select>
+                </div>
+              </div>
+              <div class="pb-24 modal-border-bottom">
+                <h4 class="fz-20 pt24">Custom Access</h4>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Lecture
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Coupon
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Message
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Setting
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Task Menu
+                  </label>
+                </div>
+              </div>
+              <div class="modal-border-bottom pt24 pb-16">
+                <h4 class="fz-20">Deactivate Account</h4>
+                <div class="d-flex pb16">
+                  <span class="material-icons md-24 text-danger pe-2">warning</span>
+                  <div class="lh-33 text-danger">
+                    This cannot be undone!
+                  </div>
+                </div>
+                <button type="button" class="deactivate btn btn-outline-danger w-100">Deactivate This Account</button>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-success me-2" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-success">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- view Admin Detail Modal -->
+      <div class="modal fade" id="adminDetail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content modal-header">
+            <div class="d-flex w-100">
+              <img class="detail-img" src="../assets/images/emir.jpeg" alt="Emir Wicks">
+              <div class="d-flex w-100 ps-4 flex-column">
+                <div class="d-flex justify-content-between">
+                  <div class="fz-16 mb-2">#1</div>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="fz-16">Admin</div>
+                <h3 class="fz-24 fw-bold mb-2">Emir Wicks</h3>
+                <div class="fz-14 text-secondary">emir.wicks@mail.com</div>
+                <a class="d-flex justify-content-between" data-bs-toggle="collapse" href="#userDetailControl" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  <span class="fz-14 pe-2 ps-2 pt-1 pb-1 bg-light rounded-2 text-dark">Verified</span>
+                  <span class="material-icons text-success">expand_less</span>
+                </a>
+                <div class="collapse" id="userDetailControl">
+                  <div class="pt-32 d-flex justify-content-end">
+                    <button type="button" class="btn btn-outline-danger me-3" data-bs-dismiss="modal">Deactivate</button>
+                    <button type="button" class="btn btn-success">Edit</button>
+                  </div>
+                </div>
+              </div>
+                
+              
+              
+            </div>
+            <div class="modal-body d-flex flex-column">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="d-flex align-items-center">
       <span class="material-icons md-24 me-4">search</span>
@@ -184,15 +312,13 @@
         <td>Emir Wicks</td>
         <td>emir.wicks@mail.com</td>
         <td>Yes</td>
-        <td>
-          <div class="d-flex justify-content-end">
-            <a class="pe-4" href="#">
-              <span class="material-icons md-24">visibility</span>
-            </a>
-            <a href="#">
-              <span class="material-icons md-24">edit_active</span>
-            </a>
-          </div>
+        <td  class="d-flex justify-content-end">
+          <a class="pe-4" href="#" data-bs-toggle="modal" data-bs-target="#adminDetail">
+            <span class="material-icons md-24">visibility</span>
+          </a>
+          <a href="" data-bs-toggle="modal" data-bs-target="#editAdmin">
+            <span class="material-icons md-24">edit</span>
+          </a>
         </td>
       </tr>
       <tr>
@@ -200,12 +326,12 @@
         <td>Zaina Goldsmith</td>
         <td>zaina.goldsmith@mail.com</td>
         <td>Yes</td>
-        <td>
-          <a class="pe-4" href="#">
+        <td  class="d-flex justify-content-end">
+          <a class="pe-4" href="#" data-bs-toggle="modal" data-bs-target="#adminDetail">
             <span class="material-icons md-24">visibility</span>
           </a>
-          <a href="#">
-            <span class="material-icons md-24">edit_active</span>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#editAdmin">
+            <span class="material-icons md-24">edit</span>
           </a>
         </td>
       </tr>
@@ -214,12 +340,12 @@
         <td>Mahima Lopez</td>
         <td>mahima.lopez@mail.com</td>
         <td>Yes</td>
-        <td>
-          <a class="pe-4" href="#">
+        <td  class="d-flex justify-content-end">
+          <a class="pe-4" href="#" data-bs-toggle="modal" data-bs-target="#adminDetail">
             <span class="material-icons md-24">visibility</span>
           </a>
-          <a href="#">
-            <span class="material-icons md-24">edit_active</span>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#editAdmin">
+            <span class="material-icons md-24">edit</span>
           </a>
         </td>
       </tr>
@@ -228,12 +354,12 @@
         <td>Pharrell Murray</td>
         <td>pharrell.murray@mail.com</td>
         <td>Yes</td>
-        <td>
-          <a class="pe-4" href="#">
+        <td  class="d-flex justify-content-end">
+          <a class="pe-4" href="#" data-bs-toggle="modal" data-bs-target="#adminDetail">
             <span class="material-icons md-24">visibility</span>
           </a>
-          <a href="#">
-            <span class="material-icons md-24">edit_active</span>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#editAdmin">
+            <span class="material-icons md-24">edit</span>
           </a>
         </td>
       </tr>
@@ -242,12 +368,12 @@
         <td>Annika Mcbride</td>
         <td>annika.mcbride@mail.com</td>
         <td>Yes</td>
-        <td>
-          <a class="pe-4" href="#">
+        <td  class="d-flex justify-content-end">
+          <a class="pe-4" href="#" data-bs-toggle="modal" data-bs-target="#adminDetail">
             <span class="material-icons md-24">visibility</span>
           </a>
-          <a href="#">
-            <span class="material-icons md-24">edit_active</span>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#editAdmin">
+            <span class="material-icons md-24">edit</span>
           </a>
         </td>
       </tr>
@@ -256,12 +382,12 @@
         <td>Fatimah Clark</td>
         <td>fatimah.clark@mail.com</td>
         <td>Yes</td>
-        <td>
-          <a class="pe-4" href="#">
+        <td  class="d-flex justify-content-end">
+          <a class="pe-4" href="#" data-bs-toggle="modal" data-bs-target="#adminDetail">
             <span class="material-icons md-24">visibility</span>
           </a>
-          <a href="#">
-            <span class="material-icons md-24">edit_active</span>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#editAdmin">
+            <span class="material-icons md-24">edit</span>
           </a>
         </td>
       </tr>
@@ -270,12 +396,12 @@
         <td>Klaudia Rhodes</td>
         <td>klaudia.rhodes@mail.com</td>
         <td>Yes</td>
-        <td>
-          <a class="pe-4" href="#">
+        <td  class="d-flex justify-content-end">
+          <a class="pe-4" href="#" data-bs-toggle="modal" data-bs-target="#adminDetail">
             <span class="material-icons md-24">visibility</span>
           </a>
-          <a href="#">
-            <span class="material-icons md-24">edit_active</span>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#editAdmin">
+            <span class="material-icons md-24">edit</span>
           </a>
         </td>
       </tr>
@@ -284,12 +410,12 @@
         <td>Tillie Lucero</td>
         <td>tillie.lucero@mail.com</td>
         <td>Yes</td>
-        <td>
-          <a class="pe-4" href="#">
+        <td  class="d-flex justify-content-end">
+          <a class="pe-4" href="#" data-bs-toggle="modal" data-bs-target="#adminDetail">
             <span class="material-icons md-24">visibility</span>
           </a>
-          <a href="#">
-            <span class="material-icons md-24">edit_active</span>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#editAdmin">
+            <span class="material-icons md-24">edit</span>
           </a>
         </td>
       </tr>
@@ -298,12 +424,12 @@
         <td>Sabrina Stephenson</td>
         <td>sabrina.stephenson@mail.com</td>
         <td>Yes</td>
-        <td>
-          <a class="pe-4" href="#">
+        <td  class="d-flex justify-content-end">
+          <a class="pe-4" href="#" data-bs-toggle="modal" data-bs-target="#adminDetail">
             <span class="material-icons md-24">visibility</span>
           </a>
-          <a href="#">
-            <span class="material-icons md-24">edit_active</span>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#editAdmin">
+            <span class="material-icons md-24">edit</span>
           </a>
         </td>
       </tr>
@@ -312,12 +438,12 @@
         <td>Annie Smith</td>
         <td>annie.smith@mail.com</td>
         <td>Yes</td>
-        <td>
-          <a class="pe-4" href="#">
+        <td  class="d-flex justify-content-end">
+          <a class="pe-4" href="#" data-bs-toggle="modal" data-bs-target="#adminDetail">
             <span class="material-icons md-24">visibility</span>
           </a>
-          <a href="#">
-            <span class="material-icons md-24">edit_active</span>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#editAdmin">
+            <span class="material-icons md-24">edit</span>
           </a>
         </td>
       </tr>
@@ -325,21 +451,25 @@
   </table>
   </div>
   <!-- 分頁 -->
-  <nav aria-label="...">
-    <ul class="pagination">
+  <nav class="pt-63" aria-label="...">
+    <ul class="pagination justify-content-end">
       <li class="page-item">
-        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-          <span class="material-icons md-24">chevron_left</span>
+        <a class="page-link border-success p-1" href="#" aria-label="Previous">
+          <span class="material-icons md-24 align-middle">chevron_left</span>
         </a>
       </li>
-      <li class="page-item active"><a class="page-link" href="#">1</a></li>
-      <li class="page-item" aria-current="page">
-        <a class="page-link" href="#">2</a>
+      <li class="page-item active">
+        <a class="page-link border-success ptb-5" href="#">1</a>
       </li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item" aria-current="page">
+        <a class="page-link border-success ptb-5" href="#">2</a>
+      </li>
       <li class="page-item">
-        <a class="page-link" href="#">
-          <span class="material-icons md-24">chevron_right</span>
+        <a class="page-link border-success ptb-5" href="#">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link border-success p-1" href="#" aria-label="Next">
+          <span class="material-icons md-24 align-middle">chevron_right</span>
         </a>
       </li>
     </ul>

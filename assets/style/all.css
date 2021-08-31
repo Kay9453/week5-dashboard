@@ -11683,6 +11683,44 @@ h4, .h4 {
   text-indent: 1rem;
 }
 
+.verified-date {
+  font-size: 0.875rem;
+  line-height: 33px;
+}
+
+#editAdmin .send-mail {
+  color: #CED4DA;
+}
+
+.deactivate {
+  padding: 1rem;
+}
+
+.fz-24 {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.detail-img {
+  width: 141px;
+  height: 141px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.pt-32 {
+  padding-top: 2rem;
+}
+
+.ptb-5 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.pt-63 {
+  padding-top: 63px;
+}
+
 h1 a, .h1 a {
   background: url("../images/logo-ANSWER.svg") no-repeat;
   width: auto;
@@ -11691,6 +11729,18 @@ h1 a, .h1 a {
   white-space: nowrap;
   overflow: hidden;
   display: block;
+}
+
+.nav-link-hover:hover {
+  color: #198754;
+  border-left: 4px solid #198754;
+  height: 2rem;
+  position: absolute;
+  left: 0;
+  padding-left: 28px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .modal-header {
@@ -11723,6 +11773,27 @@ h1 a, .h1 a {
 
 .modal-footer .btn {
   padding: 0.5rem 2rem;
+}
+
+#editAdmin .account input {
+  background-color: #F8F9FA;
+}
+
+.modal-dialog button {
+  font-weight: bold;
+}
+
+.page-item:active {
+  color: white;
+}
+
+.page-item .page-link {
+  color: #198754;
+}
+
+.page-item.active .page-link, .page-item .page-link:hover {
+  background-color: #198754;
+  color: white;
 }
 
 .index__h1 {
